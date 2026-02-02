@@ -61,7 +61,6 @@ Response:
 ###Update student
     PUT /students
     Content-Type: application/json
-
 Body:
     {
     "id": 1700000000001,

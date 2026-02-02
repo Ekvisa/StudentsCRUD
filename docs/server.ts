@@ -4,13 +4,16 @@ import fs from "node:fs/promises";
 import path from "node:path";
 const port = 3004;
 
+import cors from "cors";
+app.use(cors());
+
 const __dirname = import.meta.dirname;
 console.log(__dirname);
 
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-  res.sendFile("./home.html", { root: "./src" });
+  res.sendFile("./home.html", { root: "./docs" });
 });
 
 function getPath(file: string) {
@@ -94,7 +97,7 @@ app.delete("/students/:id", async (req, res) => {
 //   console.log(`${students}, ${id}`);
 // });
 
-app.use(express.static("./src"));
+app.use(express.static("./docs"));
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

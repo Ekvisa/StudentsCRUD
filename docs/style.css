@@ -1,17 +1,28 @@
 body {
-  background: lightcyan;
+  background: lightgray;
 }
 
-.table_header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
 }
 
-.table_item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+caption {
+  margin: 1em 0;
+}
+
+tbody {
+  background-color: lightyellow;
+}
+tbody tr:nth-child(2n) {
+  background-color: lightcyan;
+}
+tbody tr:hover {
+  background-color: white;
+}
+td,
+th {
+  padding: 1em;
 }
 
 .modal {

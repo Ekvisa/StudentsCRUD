@@ -1,21 +1,21 @@
-#Students API (Express + TypeScript)
-A small REST API for managing a student list. 
-Supports CRUD operations (create, read, edit, delete) and is used by a frontend with a table and modal window. 
-The project was created for educational practice with: 
+# Students API (Express + TypeScript)
+A plain REST API for managing a student list.  
+Supports CRUD operations (create, read, edit, delete) and is used by a frontend with a table and modal window.  
+The project was created for educational practice with:  
 - Express
 - TypeScript
 - file-based "database" (db.json)
-##📁 Structure
-src/
-├── server.ts # Express server 
-├── db.json # Student data file 
-├── home.html # Home page 
-├── script.js # Frontend logic 
-##🚀 Run
+## 📁 Structure
+src/  
+├── server.ts (Express server)  
+├── db.json (student data file)  
+├── home.html (home page)  
+├── script.js (frontend logic)  
+## 🚀 Run
     npm install
     npm run dev 
 The server will be available at: http://localhost:3004
-##📌 Data Model
+## 📌 Data Model
     interface IStudent {
         id: number;
         name: string;
@@ -24,10 +24,10 @@ The server will be available at: http://localhost:3004
         maths: number;
         english: number;
     }
-##🔗 Endpoints
-###Get all students
+## 🔗 Endpoints
+### Get all students
     GET /students
-Response:
+#### Response:  
     [
     {
     "id": 1700000000000,
@@ -38,10 +38,10 @@ Response:
         "english": 88
     }
     ]
-###Create a student
+### Create a student
     POST /students
     Content-Type: application/json
-Body:
+#### Body:  
     {
     "name": "Ivan",
     "gender": "male",
@@ -49,7 +49,7 @@ Body:
     "maths": 65,
     "english": 72
     }
-Response:
+#### Response:  
     {
     "id": 1700000000001,
     "name": "Ivan",
@@ -58,10 +58,10 @@ Response:
     "maths": 65,
     "english": 72
     }
-###Update student
+### Update student
     PUT /students
     Content-Type: application/json
-Body:
+#### Body:  
     {
     "id": 1700000000001,
     "name": "Ivan",
@@ -70,7 +70,7 @@ Body:
     "maths": 70,
     "english": 80
     }
-Response:
+#### Response:  
     {
     "id": 1700000000001,
     "name": "Ivan",
@@ -79,16 +79,16 @@ Response:
     "maths": 70,
     "english": 80
     }
-###Delete student
+### Delete student
     DELETE /students/:id
-Example:
+#### Example:  
     DELETE /students/1700000000001
-Response:
+#### Response:  
     204 No Content
-##🗂 How the "database" works
-All data is stored in the file:
+## 🗂 How the "database" works
+All data is stored in the file:  
     src/db.json
-Every POST, PUT, and DELETE:
+Every POST, PUT, and DELETE:  
 - reads the file
 - modifies the array
 - overwrites db.json

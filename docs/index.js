@@ -31,22 +31,26 @@ function createEl(tag, className, text) {
 function drawPage(arr) {
   console.log("drawPage");
   arr.forEach((student) => {
-    const div = createEl("div", "table_item");
-    const name = createEl("p", "", student.name);
-    const gender = createEl("p", "", student.gender);
-    const physics = createEl("p", "", student.physics);
-    const maths = createEl("p", "", student.maths);
-    const english = createEl("p", "", student.english);
-    const button1 = createEl("button", "", "Edit");
-    button1.addEventListener("click", () => {
+    const row = createEl("tr", "table_item");
+    const name = createEl("td", "", student.name);
+    const gender = createEl("td", "", student.gender);
+    const physics = createEl("td", "", student.physics);
+    const maths = createEl("td", "", student.maths);
+    const english = createEl("td", "", student.english);
+    const editTd = createEl("td", "", "");
+    const editBtn = createEl("button", "", "Edit");
+    editBtn.addEventListener("click", () => {
       openModalToEditStudent(student);
     });
-    const button2 = createEl("button", "", "Delete");
-    button2.addEventListener("click", () => {
+    editTd.append(editBtn);
+    const deleteTd = createEl("td", "", "");
+    const deleteBtn = createEl("button", "", "Delete");
+    deleteBtn.addEventListener("click", () => {
       actionsWithStudents(student.id, "DELETE");
     });
-    div.append(name, gender, physics, maths, english, button1, button2);
-    table.append(div);
+    deleteTd.append(deleteBtn);
+    row.append(name, gender, physics, maths, english, editTd, deleteTd);
+    table.append(row);
     console.log("Page is drawn");
   });
 }

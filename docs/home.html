@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>Students</h1>
-      <button type="button" id="addBtn">Add student</button>
-    </header>
-    <section>
-      <div class="table_header">
-        <p>Name</p>
-        <p>Gender</p>
-        <p>Physics</p>
-        <p>Maths</p>
-        <p>English</p>
-        <p>Change</p>
-        <p>Delete</p>
-      </div>
-      <div id="table" class="table"></div>
-    </section>
+    <table>
+      <caption>
+        <h1>Students</h1>
+        <button type="button" id="addBtn">Add student</button>
+      </caption>
+      <thead>
+        <tr class="table_header">
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Physics</th>
+          <th>Maths</th>
+          <th>English</th>
+          <th>Change</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="table" class="table"></tbody>
+      <!-- <div id="table" class="table"></div> -->
+    </table>
     <div id="modal" class="modal">
       <div class="modal_content">
         <p id="modalTitle">Create new student</p>
