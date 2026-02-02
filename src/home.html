@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Students</h1>
+      <button type="button" id="addBtn">Add student</button>
+    </header>
+    <section>
+      <div class="table_header">
+        <p>Name</p>
+        <p>Gender</p>
+        <p>Physics</p>
+        <p>Maths</p>
+        <p>English</p>
+        <p>Change</p>
+        <p>Delete</p>
+      </div>
+      <div id="table" class="table"></div>
+    </section>
+    <div id="modal" class="modal">
+      <div class="modal_content">
+        <p id="modalTitle">Create new student</p>
+        <input type="text" placeholder="Name" id="name" />
+        <input type="text" placeholder="Gender" id="gender" />
+        <input type="number" placeholder="Physics" id="physics" />
+        <input type="number" placeholder="Maths" id="maths" />
+        <input type="number" placeholder="English" id="english" />
+        <button type="button" id="create">Create</button>
+        <button type="button" id="modal_close">x</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

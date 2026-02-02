@@ -1,0 +1,94 @@
+#Students API (Express + TypeScript)
+A small REST API for managing a student list. 
+Supports CRUD operations (create, read, edit, delete) and is used by a frontend with a table and modal window. 
+The project was created for educational practice with: 
+- Express
+- TypeScript
+- file-based "database" (db.json)
+##📁 Structure
+src/
+├── server.ts # Express server 
+├── db.json # Student data file 
+├── home.html # Home page 
+├── script.js # Frontend logic 
+##🚀 Run
+    npm install
+    npm run dev 
+The server will be available at: http://localhost:3004
+##📌 Data Model
+    interface IStudent {
+        id: number;
+        name: string;
+        gender: string;
+        physics: number;
+        maths: number;
+        english: number;
+    }
+##🔗 Endpoints
+###Get all students
+    GET /students
+Response:
+    [
+    {
+    "id": 1700000000000,
+        "name": "Anna",
+        "gender": "female",
+        "physics": 90,
+        "maths": 85,
+        "english": 88
+    }
+    ]
+###Create a student
+    POST /students
+    Content-Type: application/json
+Body:
+    {
+    "name": "Ivan",
+    "gender": "male",
+    "physics": 70,
+    "maths": 65,
+    "english": 72
+    }
+Response:
+    {
+    "id": 1700000000001,
+    "name": "Ivan",
+    "gender": "male",
+    "physics": 70,
+    "maths": 65,
+    "english": 72
+    }
+###Update student
+    PUT /students
+    Content-Type: application/json
+Body:
+    {
+    "id": 1700000000001,
+    "name": "Ivan",
+    "gender": "male",
+    "physics": 75,
+    "maths": 70,
+    "english": 80
+    }
+Response:
+    {
+    "id": 1700000000001,
+    "name": "Ivan",
+    "gender": "male",
+    "physics": 75,
+    "maths": 70,
+    "english": 80
+    }
+###Delete student
+    DELETE /students/:id
+Example:
+    DELETE /students/1700000000001
+Response:
+    204 No Content
+##🗂 How the "database" works
+All data is stored in the file:
+    src/db.json
+Every POST, PUT, and DELETE:
+- reads the file
+- modifies the array
+- overwrites db.json
